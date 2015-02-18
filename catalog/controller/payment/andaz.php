@@ -86,6 +86,7 @@ class ControllerPaymentAndaz extends Controller
         $data['shipping_postal_code'] = html_entity_decode($order_info['shipping_postcode'], ENT_QUOTES, 'UTF-8');
         $data['shipping_country'] = html_entity_decode($order_info['shipping_iso_code_2'] , ENT_QUOTES, 'UTF-8');
         $data['pass_through'] = 'order_id:' + $this->session->data['order_id'];
+	$data['domain'] = $_SERVER['HTTP_HOST'];
 
         $curl = curl_init($url);
 
